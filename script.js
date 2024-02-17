@@ -68,7 +68,7 @@ function winOrLose()
   return win;
 }
 // play 
-function play()
+function playGame()
 {
   let result = Array(5);
   for (let time = 0; time < 5; time++)
@@ -102,4 +102,4 @@ function play()
     console.log("Computer win!!!")
   }
 }
-console.log(play());
+console.log("call playGame() to play");

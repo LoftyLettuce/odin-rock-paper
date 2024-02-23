@@ -52,37 +52,33 @@ function winOrLose(ans)
   return win;
 }
 // play 
+let score = [0, 0];
 function playGame(plrAns)
 {
   //print the result
-    console.log(winOrLose(plrAns));
-  let score = Array(2);
-  //find out who win
-  // let win = 0, draw = 0;
-  // for (let i = 0; i < 5; i++)
-  // {
-  //   console.log(result[i]);
-  //   if (result[i].search("win") != -1)
-  //   {
-  //     win++;
-  //   }
-  //   if (result[i].search("Draw") != -1)
-  //   {
-  //     draw++;
-  //   }
-  // }
-  // if (win >= 3)
-  // {
-  //   console.log("Winner: Player");
-  // }
-  // else if (draw == 5)
-  // {
-  //   console.log("No one win...");
-  // }
-  // else
-  // {
-  //   console.log("Computer win!!!");
-  // }
+  const result = winOrLose(plrAns);
+  console.log(result);
+  //tracking scores
+  //player first, com second
+  if (result.search("win") != -1)
+  {
+    score[0]++;
+  }
+  if (result.search("lost") != -1)
+  {
+    score[1]++;
+  }
+  if (score[0] == 5)
+  {
+    console.log("Winner: Player");
+    score = [0, 0];
+  }
+  else if (score[1] == 5)
+  {
+    console.log("Computer win!!!");
+    score = [0, 0];
+  }
+  console.log(score)
 }
 
 document.addEventListener('click', (event) =>{

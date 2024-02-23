@@ -17,32 +17,16 @@ function computerChoice()
   }
 }
 // winOrLose
-function winOrLose()
+function winOrLose(ans)
 {
-  // User input 
-  let invalidInput = true;
-  let validAns = ["rock", "paper", "scissors"];
-  let strToNum = validAns;
-  let ans = prompt("Choice?").toLowerCase();
-  do 
-  {
-    // check if ans is a valid answer
-    if (validAns.indexOf(ans) === -1)
-    {
-      ans = prompt("Invalid. Another choice?").toLowerCase();
-    }
-    else
-    {
-      // Change input into number
-      ans = strToNum.indexOf(ans);
-      invalidInput = false;
-    }
-  }
-  while (invalidInput);
+  // Change input into number
+  const strToNum = ["rock", "paper", "scissors"];
+  ans = strToNum.indexOf(ans);
+
   // computer choice
   let comChoice = computerChoice();
   // result
-  let numToStr = ["Rock", "Paper", "Scissors"];
+  const numToStr = ["Rock", "Paper", "Scissors"];
   let win = "You win. "+ numToStr[ans] + " beat " + numToStr[comChoice];
   let lose = "You lost. "+ numToStr[comChoice] + " beat " + numToStr[ans];
   let draw = "Draw. Both are " + numToStr[ans];
@@ -68,38 +52,51 @@ function winOrLose()
   return win;
 }
 // play 
-function playGame()
+function playGame(plrAns)
 {
-  let result = Array(5);
-  for (let time = 0; time < 5; time++)
-  {
-    result[time] = winOrLose();
-  }
-  //track winner
-  let win = 0, draw = 0;
-  for (let i = 0; i < 5; i++)
-  {
-    console.log(result[i]);
-    if (result[i].search("win") != -1)
-    {
-      win++;
-    }
-    if (result[i].search("Draw") != -1)
-    {
-      draw++;
-    }
-  }
-  if (win >= 3)
-  {
-    console.log("Winner: Player")
-  }
-  else if (draw == 5)
-  {
-    console.log("No one win...")
-  }
-  else
-  {
-    console.log("Computer win!!!")
-  }
+  //print the result
+    console.log(winOrLose(plrAns));
+  let score = Array(2);
+  //find out who win
+  // let win = 0, draw = 0;
+  // for (let i = 0; i < 5; i++)
+  // {
+  //   console.log(result[i]);
+  //   if (result[i].search("win") != -1)
+  //   {
+  //     win++;
+  //   }
+  //   if (result[i].search("Draw") != -1)
+  //   {
+  //     draw++;
+  //   }
+  // }
+  // if (win >= 3)
+  // {
+  //   console.log("Winner: Player");
+  // }
+  // else if (draw == 5)
+  // {
+  //   console.log("No one win...");
+  // }
+  // else
+  // {
+  //   console.log("Computer win!!!");
+  // }
 }
+
+document.addEventListener('click', (event) =>{
+  if (event.target.id == 'rock') 
+  {
+    playGame("rock");
+  }
+  if (event.target.id == 'paper') 
+  {
+    playGame("paper");
+  }
+  if (event.target.id == 'scissors') 
+  {
+    playGame("scissors");
+  }
+})
 console.log("call playGame() to play");

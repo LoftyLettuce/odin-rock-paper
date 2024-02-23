@@ -1,0 +1,29 @@
+body
+{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.score-board, .choices
+{
+  display: flex;
+  gap: 50px;
+}
+.score-board
+{
+  width: 80%;
+  height: 50%;
+  justify-content: space-between;
+}
+.plr, .pc
+{
+  width: 50%;
+  height: 100%;
+  border: 1px solid;
+  text-align: center;
+  font-size: 50px;
+  font-family: sans-serif;
+}

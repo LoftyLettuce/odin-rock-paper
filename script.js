@@ -1,6 +1,8 @@
 // referrences
 const plrScore = document.querySelector('#plr');
 const pcScore = document.querySelector('#pc');
+const rBoard = document.querySelector('.result');
+const wBoard = document.querySelector('.winner');
 // computerChoice
 function computerChoice()
 {
@@ -55,30 +57,40 @@ function winOrLose(ans)
   return win;
 }
 // play 
-let score = [0, 0];
+let score = [0, 0, 0, ""];
 function playGame(plrAns)
 {
-  //print the result
+  //player index 0, com index 1, result: 2, winner: 3
+  //reset
+  if (score[0] == 5 || score[1] == 5)
+  {
+    score[0] = 0;
+    score[1] = 0;
+    score[3] = "";
+  }
+  //save the result
   const result = winOrLose(plrAns);
+  score[2] = result;
   //tracking scores
-  //player first, com second
   if (result.search("win") != -1)
   {
+    plrScore.parentElement.style.backgroundColor = "red";
+    pcScore.parentElement.style.backgroundColor = "white";
     score[0]++;
   }
   if (result.search("lost") != -1)
   {
+    pcScore.parentElement.style.backgroundColor = "red";
+    plrScore.parentElement.style.backgroundColor = "white";
     score[1]++;
   }
   if (score[0] == 5)
   {
-    console.log("Winner: Player");
-    score = [0, 0];
+    score[3] = "Winner: Player";
   }
   else if (score[1] == 5)
   {
-    console.log("Computer win!!!");
-    score = [0, 0];
+    score[3] = ("Computer win!!!");
   }
 }
 
@@ -97,4 +109,6 @@ document.addEventListener('click', (event) =>{
   }
   plrScore.textContent = score[0];
   pcScore.textContent = score[1];
+  rBoard.textContent = score[2];
+  wBoard.textContent = score[3];
 })

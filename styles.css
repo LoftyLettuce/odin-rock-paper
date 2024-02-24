@@ -4,7 +4,7 @@ body
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 5vh;
 }
 .score-board, .choices
@@ -29,4 +29,10 @@ body
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.winner, .result
+{
+  width: 80vw;
+  font-size: 5vw;
+  text-align: center;
 }

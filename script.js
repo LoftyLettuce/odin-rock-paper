@@ -71,6 +71,8 @@ function playGame(plrAns)
     score[0] = 0;
     score[1] = 0;
     score[3] = "";
+    plrScore.parentElement.style.backgroundColor = "white";
+    pcScore.parentElement.style.backgroundColor = "white";
   }
   //save the result
   const result = winOrLose(plrAns);

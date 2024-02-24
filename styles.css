@@ -24,15 +24,26 @@ body
   height: 100%;
   border: 1px solid;
   text-align: center;
-  font-size: 5vw;
+  font-size: 3vw;
   font-family: sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .winner, .result
 {
   width: 80vw;
-  font-size: 5vw;
+  height: 4vw;
+  font-size: 3vw;
   text-align: center;
+  font-family: sans-serif;
+}
+button
+{
+  font-size: 3vw;
+}
+p
+{
+  margin: 0;
+  height: 5vw;
 }

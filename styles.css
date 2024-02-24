@@ -5,17 +5,17 @@ body
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+  gap: 5vh;
 }
 .score-board, .choices
 {
   display: flex;
-  gap: 50px;
+  gap: 5vw;
 }
 .score-board
 {
-  width: 80%;
-  height: 50%;
+  width: 80vw;
+  height: 50vh;
   justify-content: space-between;
 }
 .plr, .pc
@@ -24,6 +24,9 @@ body
   height: 100%;
   border: 1px solid;
   text-align: center;
-  font-size: 50px;
+  font-size: 5vw;
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

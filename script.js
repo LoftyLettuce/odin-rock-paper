@@ -1,6 +1,8 @@
 // referrences
 const plrScore = document.querySelector('#plr');
 const pcScore = document.querySelector('#pc');
+const prChoice = document.querySelector('#plrChoice');
+const pcChoice = document.querySelector('#pcChoice');
 const rBoard = document.querySelector('.result');
 const wBoard = document.querySelector('.winner');
 // computerChoice
@@ -32,6 +34,8 @@ function winOrLose(ans)
   let comChoice = computerChoice();
   // result
   const numToStr = ["Rock", "Paper", "Scissors"];
+  pcChoice.textContent = numToStr[comChoice];
+  prChoice.textContent = numToStr[ans];
   let win = "You win. "+ numToStr[ans] + " beat " + numToStr[comChoice];
   let lose = "You lost. "+ numToStr[comChoice] + " beat " + numToStr[ans];
   let draw = "Draw. Both are " + numToStr[ans];

@@ -1,3 +1,6 @@
+// referrences
+const plrScore = document.querySelector('#plr');
+const pcScore = document.querySelector('#pc');
 // computerChoice
 function computerChoice()
 {
@@ -57,7 +60,6 @@ function playGame(plrAns)
 {
   //print the result
   const result = winOrLose(plrAns);
-  console.log(result);
   //tracking scores
   //player first, com second
   if (result.search("win") != -1)
@@ -78,7 +80,6 @@ function playGame(plrAns)
     console.log("Computer win!!!");
     score = [0, 0];
   }
-  console.log(score)
 }
 
 document.addEventListener('click', (event) =>{
@@ -94,5 +95,6 @@ document.addEventListener('click', (event) =>{
   {
     playGame("scissors");
   }
+  plrScore.textContent = score[0];
+  pcScore.textContent = score[1];
 })
-console.log("call playGame() to play");
